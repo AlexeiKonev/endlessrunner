@@ -250,6 +250,7 @@ MonoBehaviour:
   - {fileID: 879509607531522082, guid: cd29cc85404e08849adced6004e633d0, type: 3}
   - {fileID: 1863553994066296230, guid: 9e6f604d360ace04a9520983fb2c48fc, type: 3}
   - {fileID: 7845657184875438724, guid: 0b22ff3e68a59ba4ea81ee13f6884762, type: 3}
+  player: {fileID: 1558711753}
   tileLength: 100
   spawnPos: 0
 --- !u!4 &820151674
