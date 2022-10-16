@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private int lineToMove = 1;
     [SerializeField] private int lineToDistance = 4;
+    [SerializeField] private float jumpForce ;
+    [SerializeField] private float gravity ;
 
     void Start()
     {
@@ -32,6 +34,11 @@ public class PlayerController : MonoBehaviour
                 lineToMove --;
             }
         }
+        if (SwipeController.swipeUp)
+        {
+            if(controller.isGrounded)
+                Jump();
+        }
 
         Vector3 targetPosition = transform.position.z * transform.forward + transform.position.y * transform.up;
         if (lineToMove == 0)
@@ -43,6 +50,11 @@ public class PlayerController : MonoBehaviour
   private  void FixedUpdate()
     {
        dir.z = speed ;
+        dir.y += gravity * Time.fixedDeltaTime;
        controller.Move(dir * Time.fixedDeltaTime);
+    }
+    private void Jump()
+    {
+        dir.y = jumpForce;
     }
 }
